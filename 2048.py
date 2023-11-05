@@ -41,5 +41,24 @@ class Game2048(Frame):
                 grid_row.append(t)
 
             self.grid_row.append(grid_row)
-
     
+    def init_matrix(self):
+        self.matrix = Logics.start_game()
+        Logics.add_new_2(self.matrix)
+        Logics.add_new_2(self.matrix)
+
+    def update_grid_cells(self):
+        for i in range(c.GRID_LEN):
+            for j in range(c.GRID_LEN):
+                new_number = self.matrix[i][j]
+                if new_number == 0:
+                    self.grid_cells[i][j].configure(
+                        text="", bg=c.BACKGROUND_COLOR_CELL_EMPTY)
+                else:
+                    self.grid_cells[i][j].configure(text = str(
+                        new_number),bg =c.BACKGROUND_COLOR_DICT[new_number],
+                        fg = c.CELL_COLOR_DICT[new_number])
+                    
+        self.update_idletasks()
+
+        
