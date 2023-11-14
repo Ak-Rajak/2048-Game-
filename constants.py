@@ -17,17 +17,17 @@ BACKGROUND_COLOR_DICT = {2:"#FFEFDB",
                          1024:"#FFD700",
                          2048:"#FFD700"} 
 
-CELL_COLOR_DICT = {2:"#F8F8FF",
-                    4:"#F8F8FF",
-                    8:"#F8F8FF",
-                    16:"#F8F8FF",
-                    32:"#F8F8FF",
-                    64:"#F8F8FF",
-                    128:"#F8F8FF",
-                    256:"#F8F8FF",
-                    512:"#F8F8FF",
-                    1024:"#F8F8FF",
-                    2048:"#F8F8FF"} 
+CELL_COLOR_DICT = {2:"#8B7D6B",
+                    4:"#8B7D6B",
+                    8:"#8B7D6B",
+                    16:"#8B7D6B",
+                    32:"#8B7D6B",
+                    64:"#8B7D6B",
+                    128:"#8B7D6B",
+                    256:"#8B7D6B",
+                    512:"#8B7D6B",
+                    1024:"#8B7D6B",
+                    2048:"#8B7D6B"} 
 
 FONT = {"Verdana" , 40 ,"bold"}
 

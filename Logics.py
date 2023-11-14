@@ -58,42 +58,42 @@ def compress(mat):
     return new_mat,changed
 
 # All moves in 2048 Game
+def move_up(grid):
+    transposed_grid = transpose(grid)
+    new_grid,changed1 = compress(transposed_grid)
+    new_grid,changed2 = merge(new_grid)
+    changed = changed1 or changed2
+    new_grid,temp = compress(new_grid)
+    final_grid = transpose(new_grid)
+    return final_grid,changed
+
 def move_down(grid):
     transposed_grid = transpose(grid)
     reversed_grid = reverse(transposed_grid)
     new_grid,changed1 = compress(reversed_grid)
     new_grid,changed2 = merge(new_grid)
     changed = changed1 or changed2
-    new_grid = compress(new_grid)
-    final_revesed_gird = reverse(new_grid)
-    final_grid = transpose(final_revesed_gird)
-    return final_grid,changed
-
-def move_up(grid):
-    transposed_grid = transpose(grid)
-    new_grid,changed1 = compress(transposed_grid)
-    new_grid,changed2 = merge(new_grid)
-    changed = changed1 or changed2
-    new_grid = compress(new_grid)
-    final_grid = transpose(new_grid)
+    new_grid,temp = compress(new_grid)
+    final_reversed_grid = reverse(new_grid)
+    final_grid = transpose(final_reversed_grid)
     return final_grid,changed
 
 def move_right(grid):
+    
     reversed_grid = reverse(grid)
     new_grid,changed1 = compress(reversed_grid)
     new_grid,changed2 = merge(new_grid)
     changed = changed1 or changed2
-    new_grid = compress(new_grid)
+    new_grid,temp = compress(new_grid)
     final_grid = reverse(new_grid)
     return final_grid,changed
-    
+
 def move_left(grid):
     new_grid,changed1 = compress(grid)
     new_grid,changed2 = merge(new_grid)
     changed = changed1 or changed2
     new_grid,temp = compress(new_grid)
     return new_grid,changed
-
 
 def get_current_state(mat):
     #Anywhere 2048 is present 
